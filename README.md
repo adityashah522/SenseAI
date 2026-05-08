@@ -75,6 +75,22 @@ HarmoniAI allows deaf and hard-of-hearing users to experience music through sync
 - Training: PyTorch, Google Colab, ASL Alphabet dataset (Kaggle)
 - Export: coremltools, mlprogram format
 
+### HarmonAI Classifer
+
+- Architecture: CNN-based emotion regression model
+- Input: Grayscale Mel spectrogram (made from real time audio data), shape `[1, 224, 224, 1]`
+- Output: Valence + arousal values, shape `[1, 2]` -> Classifed into an emotion depnding on the values
+- Preprocessing:
+  * Audio → Mel spectrogram
+  * Resize to `224 × 224`
+  * Normalize to `[0,1]`
+- Predictions:
+  * Valence = emotional positivity
+  * Arousal = emotional intensity
+- Training: TensorFlow / Keras, Python
+- Model format: `.keras`
+- Usage: Real-time music visualization control
+
 ---
 
 ## Key Engineering Challenges
